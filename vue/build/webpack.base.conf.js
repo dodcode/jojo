@@ -31,8 +31,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
     entry: entries,
   // entry: {
-  //   // app: './src/main.js'
-  //     login: './src/login.js' // For paper-kit
+  //   app: './src/main.js'
   // },
   output: {
     path: config.build.assetsRoot,
@@ -84,14 +83,7 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      },
-        {
-            test: /\.(png|jpe?g|gif|svg|ico)(\?\S*)?$/,
-            loader: 'file-loader',
-            options: {
-                name: utils.assetsPath('img/[name].[hash:7].[ext]')
-            }
-        },
+      }
     ]
   },
   node: {

@@ -53,20 +53,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     //   template: 'index.html',
     //   inject: true
     // }),
-
-    // 配置多页应用
-    //   new HtmlWebpackPlugin({
-    //       filename: 'index.html',
-    //       template: './templates/index.html',
-    //       chunks: ['index'],
-    //       inject: true
-    //   }),
-    //   new HtmlWebpackPlugin({
-    //       filename: 'login.html',
-    //       template: './templates/login.html',
-    //       chunks: ['login'],
-    //       inject: true
-    //   }),
   ]
 })
 // support multi-page application
