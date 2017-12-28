@@ -1,17 +1,17 @@
 /* eslint-disable */
-import Login from '@/components/Login'
-import Register from '@/components/Register'
+import RightIndex from '@/components/admin/RightIndex'
+import RightEditor from '../components/admin/RightEditor'
 
 export default [
     {
         path: '/',
-        name: 'login',
-        component: Login,
+        name: 'right-index',
+        component: RightIndex,
     },
     {
-        path: '/register',
-        name: 'register',
-        component: Register
+        path: '/editor',
+        name: 'right-editor',
+        component: RightEditor,
     }
 ]
 

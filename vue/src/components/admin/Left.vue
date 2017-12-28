@@ -10,6 +10,9 @@
 
                     <li class="submenu">
                         <a class="active" href="/admin"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
+                        <ul class="list-unstyled">
+                            <li><router-link :to="'/editor'">editor</router-link></li>
+                        </ul>
                     </li>
 
                     <li class="submenu">
