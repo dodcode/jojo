@@ -60,7 +60,7 @@ templates.forEach((template) => {
     devWebpackConfig.plugins.push(
         new HtmlWebpackPlugin({
             filename: template + '.html',
-            template: './templates/' + template + '.html',
+            template: './src/templates/' + template + '.html',
             chunks: [template],
             inject: true
         })

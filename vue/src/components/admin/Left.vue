@@ -9,7 +9,7 @@
                 <ul>
 
                     <li class="submenu">
-                        <a class="active" href="admin.html"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
+                        <a class="active" href="/admin"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
                     </li>
 
                     <li class="submenu">

@@ -4,7 +4,7 @@
 
         <!-- LOGO -->
         <div class="headerbar-left">
-            <a href="admin.html" class="logo"><img alt="Logo" v-bind:src="logo"  /> <span>Admin</span></a>
+            <a href="/admin" class="logo"><img alt="Logo" v-bind:src="logo"  /> <span>Admin</span></a>
         </div>
 
         <nav class="navbar-custom">

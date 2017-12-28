@@ -2,6 +2,6 @@ module.exports = {
     templates: [
         "index",
         "auth",
-        "admin"
+        "admin/index"
     ]
 }

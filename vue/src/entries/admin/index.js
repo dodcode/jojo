@@ -1,13 +1,13 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import router from '../router/auth'
+import router from '../../router/auth'
 import BootstrapVue from 'bootstrap-vue'
 import VueResource from 'vue-resource'
-import Top from '../components/admin/Top'
-import Left from '../components/admin/Left'
-import Right from '../components/admin/Right'
-import Bottom from '../components/admin/Bottom'
+import Top from '../../components/admin/Top'
+import Left from '../../components/admin/Left'
+import Right from '../../components/admin/Right'
+import Bottom from '../../components/admin/Bottom'
 
 
 Vue.use(BootstrapVue)
