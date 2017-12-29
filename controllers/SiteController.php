@@ -3,12 +3,10 @@
 namespace app\controllers;
 
 use app\models\EntryForm;
-use app\modules\backend\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\helpers\Url;
 use yii\web\Response;
-use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
@@ -22,20 +20,40 @@ class SiteController extends BaseController
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'only' => ['login', 'test'], // ACF should only be applied to these actions.
                 'rules' => [
+                    // all guest users can access login action.
                     [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
+                        'allow' => true, // specifies whether this is an "allow" or "deny" rule.
+                        'actions' => ['login'], // specifies which actions this rule matches.
+                        'roles' => ['?'], // guest users. (not authenticated yet).
+                        // specifies which request method this rule matches.
+                        'verbs' => ['get', 'post']
                     ],
+                    // when guest is forbidden, Yii will redirect guest to login page.
+                    [
+                        'allow' => false,
+                        'actions' => ['test'],
+                        'roles' => ['?'],
+                        'verbs' => ['get'],
+                    ],
+
+                    // all authenticated users can access logout action.
+                    // !!!! You should not forbid people to logout,
+                    // otherwise, Yii will redirect people to login page.
+//                    [
+//                        'allow' => true,
+//                        'actions' => ['logout'],
+//                        'roles' => ['@'], // authenticated users.
+                        // specifies which request method this rule matches.
+//                        'verbs' => ['post'],
+//                    ],
                 ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
+
+                // when the rules deny the access, this callback should be called.
+//                'denyCallback' => function ($rule, $action) {
+//                    return $this->redirect(Url::to('/'));
+//                }
             ],
         ];
     }
@@ -95,7 +113,7 @@ class SiteController extends BaseController
     {
         Yii::$app->user->logout();
 
-        return $this->goHome();
+        return $this->redirect(Url::to('/'));
     }
 
     /**
@@ -140,7 +158,11 @@ class SiteController extends BaseController
             return $this->render('entry', ['model' => $model]);
         }
     }
-    
+
+    /**
+     * @return string|Response
+     * @throws \yii\base\Exception
+     */
     public function actionSignUp()
     {
         if (\Yii::$app->request->isPost) {
@@ -152,7 +174,7 @@ class SiteController extends BaseController
                 ]);
             }
 
-            $user = new User();
+            $user = new \app\models\User();
             $user->username = get_post('username');
             $user->password = get_security()->generatePasswordHash(get_post('password'));
             $user->auth_key = get_security()->generateRandomString();
@@ -164,11 +186,15 @@ class SiteController extends BaseController
                 exit();
             }
         } else {
-            $model = new \app\modules\backend\models\User();
+            $model = new \app\models\User();
 
             return $this->render('@views/site/sign-up', [
                 'model' => $model,
             ]);
         }
+    }
+
+    public function actionTest() {
+        die('test');
     }
 }

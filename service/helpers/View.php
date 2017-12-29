@@ -18,6 +18,6 @@ class View
      * @return string
      */
     public static function csrfField() {
-        return '<input type="hidden" name="_csrf" value="'.yii_request()->getCsrfToken().'">';
+        return '<input type="hidden" name="_csrf" value="'.get_request()->getCsrfToken().'">';
     }
 }
