@@ -43,6 +43,6 @@ class AccessFilter extends AccessControl
 //        }
 
         //
-        throw new ForbiddenHttpException(Yii::t('yii', 'You are not allowed to perform this action.'));
+        throw new ForbiddenHttpException(translate('yii', 'You are not allowed to perform this action.'));
     }
 }

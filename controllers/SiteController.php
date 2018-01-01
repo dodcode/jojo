@@ -51,9 +51,11 @@ class SiteController extends BaseController
                 ],
 
                 // when the rules deny the access, this callback should be called.
-//                'denyCallback' => function ($rule, $action) {
-//                    return $this->redirect(Url::to('/'));
-//                }
+                'denyCallback' => function ($rule, $action) {
+                    if ($action->id = 'login') {
+                        return $this->redirect(Url::to('/'));
+                    }
+                }
             ],
         ];
     }
