@@ -31,12 +31,12 @@ class SiteController extends BaseController
                         'verbs' => ['get', 'post']
                     ],
                     // when guest is forbidden, Yii will redirect guest to login page.
-                    [
-                        'allow' => false,
-                        'actions' => ['test'],
-                        'roles' => ['?'],
-                        'verbs' => ['get'],
-                    ],
+//                    [
+//                        'allow' => false,
+//                        'actions' => ['test'],
+//                        'roles' => ['?'],
+//                        'verbs' => ['get'],
+//                    ],
 
                     // all authenticated users can access logout action.
                     // !!!! You should not forbid people to logout,

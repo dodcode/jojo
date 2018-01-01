@@ -14,9 +14,45 @@ use yii\db\ActiveRecord;
  * @property string $password
  * @property string $auth_key
  * @property string $access_token
+ *
+ * @property UserProfile $profile
  */
 class User extends ActiveRecord implements \yii\web\IdentityInterface
 {
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return '{{%user}}';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['username', 'password'], 'required'],
+            ['username', 'unique'],
+            ['username', 'string', 'length' => [4,24]],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => translate('user', 'ID'),
+            'username' => translate('user', 'Username'),
+            'password' => translate('user', 'Password'),
+            'auth_key' => translate('user', 'Auth Key'),
+            'access_token' => translate('user', 'Access Token'),
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -77,5 +113,12 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
     public function validatePassword($password)
     {
         return get_security()->validatePassword($password, $this->password);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProfile() {
+        return $this->hasOne(UserProfile::className(), ['user_id' => 'id']);
     }
 }

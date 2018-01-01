@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\backend\models;
+namespace app\models;
 
 use Yii;
 
@@ -10,7 +10,7 @@ use Yii;
  * @property integer $id
  * @property integer $user_id
  * @property string $email
- *
+ * @property string nickname
  * @property User $user
  */
 class UserProfile extends \yii\db\ActiveRecord
@@ -41,9 +41,9 @@ class UserProfile extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('user', 'ID'),
-            'user_id' => Yii::t('user', 'User ID'),
-            'email' => Yii::t('user', 'Email'),
+            'id' => translate('user', 'ID'),
+            'user_id' => translate('user', 'User ID'),
+            'email' => translate('user', 'Email'),
         ];
     }
 

@@ -100,3 +100,31 @@ if (!function_exists('get_security')) {
         return get_app()->getSecurity();
     }
 }
+
+if (!function_exists('get_alias')) {
+    /**
+     * 将路径别名翻译为真实的路径名
+     *
+     * @param $alias
+     * @param bool $throwException
+     * @return bool|string
+     */
+    function get_alias($alias, $throwException = true) {
+        return \Yii::getAlias($alias, $throwException);
+    }
+}
+
+if (!function_exists('translate')) {
+    /**
+     * 翻译字符串
+     *
+     * @param string $category
+     * @param string $message
+     * @param array $params
+     * @param null $language
+     * @return string
+     */
+    function translate($category, $message, $params = [], $language = null) {
+        return \Yii::t($category, $message, $params, $language);
+    }
+}

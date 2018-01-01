@@ -20,10 +20,10 @@ class Module extends \yii\base\Module
         parent::init();
 
         // custom initialization code goes here
-        \Yii::configure(\Yii::$app->view->theme, [
-            'pathMap' => [
-                '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
-            ]
-        ]);
+//        \Yii::configure(\Yii::$app->view->theme, [
+//            'pathMap' => [
+//                '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+//            ]
+//        ]);
     }
 }

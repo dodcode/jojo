@@ -11,6 +11,10 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'Vq9AauH0_uuBg01-NyCj35Gu29KKYUG_',
+            // let the API accept input data in JSON format.
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser'
+            ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -42,9 +46,20 @@ $config = [
 
         'urlManager' => [
             'enablePrettyUrl' => true,
+//            'enableStrictParsing' => true,
             'showScriptName' => false,
-            'rules' => [
-            ],
+//            'rules' => [
+//                [
+//                    'class' => 'yii\rest\UrlRule',
+//                    'controller' => 'api/article',
+//                    'pluralize' => false
+//                ],
+//                [
+//                    'class' => 'yii\rest\UrlRule',
+//                    'controller' => 'rest',
+//                    'pluralize' => false
+//                ]
+//            ],
         ],
         'view' => [
             'theme' => [
@@ -77,6 +92,9 @@ $config = [
         'frontend' => [
             'class' => 'app\modules\frontend\Module',
         ],
+        'api' => [
+            'class' => 'app\modules\api\Module'
+        ]
     ],
 ];
 
