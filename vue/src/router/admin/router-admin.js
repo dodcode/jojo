@@ -1,7 +1,7 @@
 /* eslint-disable */
-import RightIndex from '@/components/admin/RightIndex'
-import RightEditor from '../components/admin/RightEditor'
-import RightMedia from '../components/admin/RightMedia'
+import RightIndex from '../../components/admin/index/RightIndex'
+import RightEditor from '../../components/admin/editor/RightEditor'
+import RightMedia from '../../components/admin/media/RightMedia'
 
 export default [
     {

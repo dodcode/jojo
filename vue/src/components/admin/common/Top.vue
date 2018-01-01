@@ -103,7 +103,7 @@
                         <!-- item-->
                         <a href="#" class="dropdown-item notify-item">
                             <div class="notify-icon bg-faded">
-                                <img src="../../assets/pike-admin/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid">
+                                <img src="../../../assets/pike-admin/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid">
                             </div>
                             <p class="notify-details">
                                 <b>John Doe</b>
@@ -115,7 +115,7 @@
                         <!-- item-->
                         <a href="#" class="dropdown-item notify-item">
                             <div class="notify-icon bg-faded">
-                                <img src="../../assets/pike-admin/images/avatars/avatar3.png" alt="img" class="rounded-circle img-fluid">
+                                <img src="../../../assets/pike-admin/images/avatars/avatar3.png" alt="img" class="rounded-circle img-fluid">
                             </div>
                             <p class="notify-details">
                                 <b>Michael Cox</b>
@@ -127,7 +127,7 @@
                         <!-- item-->
                         <a href="#" class="dropdown-item notify-item">
                             <div class="notify-icon bg-faded">
-                                <img src="../../assets/pike-admin/images/avatars/avatar4.png" alt="img" class="rounded-circle img-fluid">
+                                <img src="../../../assets/pike-admin/images/avatars/avatar4.png" alt="img" class="rounded-circle img-fluid">
                             </div>
                             <p class="notify-details">
                                 <b>Michelle Dolores</b>
@@ -146,7 +146,7 @@
 
                 <li class="list-inline-item dropdown notif">
                     <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="../../assets/pike-admin/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
+                        <img src="../../../assets/pike-admin/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                         <!-- item-->
@@ -188,7 +188,7 @@
 </template>
 
 <script>
-    import logo from '../../assets/pike-admin/images/logo.png'
+    import logo from '../../../assets/pike-admin/images/logo.png'
 
     export default {
         name: "header",

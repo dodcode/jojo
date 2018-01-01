@@ -1,6 +1,6 @@
 /* eslint-disable */
-import Login from '@/components/Login'
-import Register from '@/components/Register'
+import Login from '../../components/front/auth/Login'
+import Register from '../../components/front/auth/Register'
 
 export default [
     {

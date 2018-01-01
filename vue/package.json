@@ -23,6 +23,7 @@
     "jquery": "^3.2.1",
     "jquery.nicescroll": "^3.7.6",
     "mavon-editor": "^2.4.15",
+    "tether": "^1.4.3",
     "vue": "^2.5.2",
     "vue-resource": "^1.3.4",
     "vue-router": "^3.0.1",
