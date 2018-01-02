@@ -26,7 +26,34 @@
 </head>
 <body>
 <div id="auth">
-    <top></top>
+    <nav class="navbar navbar-expand-md fixed-top navbar-transparent">
+        <div class="container">
+            <div class="navbar-translate">
+                <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar"></span>
+                    <span class="navbar-toggler-bar"></span>
+                    <span class="navbar-toggler-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://www.creative-tim.com">dodcode</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="jojo" data-placement="bottom" href="https://github.com/dodcode/jojo" target="_blank">
+                            <i class="fa fa-github"></i>
+                            <p class="d-lg-none">jojo</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="about" data-placement="bottom" href="http://www.dodcode.com/about" target="_blank">
+                            <i class="fa fa-user-circle"></i>
+                            <p class="d-lg-none">about</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="wrapper">
         <div class="page-header" style="background-image: url('../../src/assets/paper-kit/img/login-image.jpg');">
             <div class="filter"></div>
@@ -34,7 +61,9 @@
                 <div class="row">
                     <auth></auth>
                 </div>
-                <bottom></bottom>
+                <div class="footer register-footer text-center">
+                    <h6>&copy; dodcode {{ copyrightYear }} | theme <i class="fa fa-heart heart"></i> by Creative Tim</h6>
+                </div>
             </div>
         </div>
     </div>

@@ -68,6 +68,5 @@
     #editor {
         margin: auto;
         width: 80%;
-        height: 600px;
     }
 </style>

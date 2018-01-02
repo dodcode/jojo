@@ -1,7 +1,7 @@
 <template>
-    <div class="footer register-footer text-center">
-        <h6>&copy; {{ copyrightYear }}, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
-    </div>
+    <footer class="footer">
+        <h6 class="text-center">&copy; {{ copyrightYear }}, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
+    </footer>
 </template>
 
 <script>
@@ -16,5 +16,4 @@
 </script>
 
 <style scoped>
-
 </style>

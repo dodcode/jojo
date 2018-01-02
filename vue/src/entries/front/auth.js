@@ -3,9 +3,9 @@
 import Vue from 'vue'
 import router from '../../router/front/auth'
 // import BootstrapVue from 'bootstrap-vue'
-import Top from '../../components/front/common/Top'
+// import Top from '../../components/front/common/Top'
 import Auth from '../../components/front/auth/Auth'
-import Bottom from '../../components/front/common/Bottom'
+// import Bottom from '../../components/front/common/Bottom'
 import VueResource from 'vue-resource'
 
 import 'tether/dist/js/tether.min'
@@ -21,8 +21,13 @@ new Vue({
     router,
     // template: '<App/>',
     components: {
-        Top,
+        // Top,
         Auth,
-        Bottom
+        // Bottom
+    },
+    data() {
+        return {
+            copyrightYear: new Date().getFullYear()
+        }
     }
 })

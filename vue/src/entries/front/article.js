@@ -16,7 +16,7 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-    el: '#auth',
+    el: '#article',
     // template: '<App/>',
     components: {
         Top,

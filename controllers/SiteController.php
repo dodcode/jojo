@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\EntryForm;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\Markdown;
 use yii\helpers\Url;
 use yii\web\Response;
 use app\models\LoginForm;
@@ -31,12 +32,12 @@ class SiteController extends BaseController
                         'verbs' => ['get', 'post']
                     ],
                     // when guest is forbidden, Yii will redirect guest to login page.
-//                    [
-//                        'allow' => false,
-//                        'actions' => ['test'],
-//                        'roles' => ['?'],
-//                        'verbs' => ['get'],
-//                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['test'],
+                        'roles' => ['?'],
+                        'verbs' => ['get'],
+                    ],
 
                     // all authenticated users can access logout action.
                     // !!!! You should not forbid people to logout,
@@ -197,6 +198,7 @@ class SiteController extends BaseController
     }
 
     public function actionTest() {
-        die('test');
+        $result = Markdown::process('# abc'.PHP_EOL.'## bcd'.PHP_EOL.'> aaa', 'gfm');
+        return $this->render('test', ['result' => $result]);
     }
 }
