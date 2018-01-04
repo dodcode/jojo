@@ -132,7 +132,7 @@ templates.forEach((template) => {
         new HtmlWebpackPlugin({
             filename: template + '.html',
             template: './src/templates/' + template + '.html',
-            chunks: [template],
+            chunks: ['manifest', 'vendor', template],
             inject: true,
             minify: {
                 removeComments: true,

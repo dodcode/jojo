@@ -3,11 +3,19 @@
 import Vue from 'vue'
 // import BootstrapVue from 'bootstrap-vue'
 import Top from '../../components/front/common/Top'
-import Editor from '../../components/common/Editor'
+// import Editor from '../../components/common/Editor'
+import MainContent from '../../components/front/article/MainContent'
 import Bottom from '../../components/front/common/Bottom'
 import VueResource from 'vue-resource'
 
-import 'tether/dist/js/tether.min'
+import '../../assets/paper-kit/js/jquery-3.2.1.js'
+import '../../assets/paper-kit/js/jquery-ui-1.12.1.custom.min.js'
+
+import '../../assets/paper-kit/css/bootstrap.min.css'
+import '../../assets/paper-kit/css/paper-kit.css?v=2.1.0'
+import '../../assets/paper-kit/css/demo.css'
+import '../../assets/css/font-montserrat.css'
+import '../../assets/pike-admin/font-awesome/css/font-awesome.min.css'
 
 // Vue.use(BootstrapVue)
 Vue.use(VueResource)
@@ -20,7 +28,8 @@ new Vue({
     // template: '<App/>',
     components: {
         Top,
-        Editor,
+        // Editor,
+        MainContent,
         Bottom
     }
 })
