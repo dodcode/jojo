@@ -7,7 +7,7 @@
                     <span class="navbar-toggler-bar"></span>
                     <span class="navbar-toggler-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://www.dodcode.com">dodcode</a>
+                <a class="navbar-brand" href="#">jojo</a>
             </div>
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav ml-auto">
@@ -18,7 +18,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="about" data-placement="bottom" href="http://www.dodcode.com/about" target="_blank">
+                        <a class="nav-link" rel="tooltip" title="about" data-placement="bottom" href="#" target="_blank">
                             <i class="fa fa-user-circle"></i>
                             <p class="d-lg-none">about</p>
                         </a>

@@ -18,7 +18,7 @@
                     </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="about" data-placement="bottom" href="http://www.dodcode.com/about" target="_blank">
+                        <a class="nav-link" rel="tooltip" title="about" data-placement="bottom" href="#" target="_blank">
                         <i class="fa fa-user-circle"></i>
                         <p class="d-lg-none">about</p>
                     </a>
