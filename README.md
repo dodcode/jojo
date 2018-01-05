@@ -1,2 +1,2 @@
 # jojo
-jojo, fill Vue into Yii!
+jojo, fill Vue in Yii!
