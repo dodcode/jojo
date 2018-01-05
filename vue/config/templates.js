@@ -1,7 +1,7 @@
 module.exports = {
     templates: [
-        "front/auth",
+        "front/login",
         "front/article",
-        "admin/index"
+        "backend/index"
     ]
 }
