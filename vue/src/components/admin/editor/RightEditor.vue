@@ -90,8 +90,8 @@
                     value: '# abc',
                     placeholder: 'start writing...',
                     toolbarsFlag: false,
-                    subfield: false,
-                    default_open: 'preview'
+                    // subfield: false,
+                    // default_open: 'preview'
                 }
             }
         },
@@ -106,10 +106,15 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     #editor {
         margin: auto;
         width: 80%;
         height: 600px;
+
+        .v-note-wrapper {
+            z-index: inherit;
+
+        }
     }
 </style>

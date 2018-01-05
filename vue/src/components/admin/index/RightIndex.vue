@@ -303,6 +303,7 @@
     import DoughnutChart from "./DoughnutChart";
     import DataTable from "./DataTable";
 
+    import '../../../assets/pike-admin/js/jquery.min'
     import "waypoints/lib/jquery.waypoints.min";
     import "counterup/jquery.counterup.min";
 
@@ -321,7 +322,7 @@
                 time: 600
             });
 
-            $(".nicescroll").niceScroll({cursorcolor:"#858586"});
+            // $(".nicescroll").niceScroll({cursorcolor:"#858586"});
         }
     }
 </script>
