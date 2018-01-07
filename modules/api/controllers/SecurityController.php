@@ -12,18 +12,19 @@ namespace app\modules\api\controllers;
 
 use yii\rest\ActiveController;
 
-class SecurityController extends ActiveController
+class SecurityController extends BaseController
 {
+    public $modelClass = 'app\modules\api\models\Security';
 
     /**
      * get csrf tags.
      *
      * @return array
      */
-    public function actionCsrfTags() {
+    public function actionCsrf() {
         return [
-            'csrf-param' => get_request()->csrfParam,
-            'csrf-token' => get_request()->getCsrfToken()
+            'csrf_param' => get_request()->csrfParam,
+            'csrf_token' => get_request()->getCsrfToken()
         ];
     }
 }

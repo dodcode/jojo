@@ -7,6 +7,8 @@ import Top from '../../components/front/login/Top'
 import Auth from '../../components/front/login/Auth'
 import LoginBottom from '../../components/front/login/LoginBottom'
 import VueResource from 'vue-resource'
+// import Vuex from 'vuex'
+import store from '../../store'
 
 import '../../assets/paper-kit/css/bootstrap.min.css'
 import '../../assets/paper-kit/css/paper-kit.css?v=2.1.0'
@@ -19,13 +21,15 @@ import LoginBg from '../../assets/paper-kit/img/login-image.jpg'
 
 
 // import 'tether/dist/js/tether.min'
-import '../../assets/paper-kit/js/jquery-3.2.1.js'
+// import '../../assets/paper-kit/js/jquery-3.2.1.js'
+import 'jquery'
 import '../../assets/paper-kit/js/jquery-ui-1.12.1.custom.min.js'
 // import '../../assets/paper-kit/js/popper.js'
 // import '../../assets/paper-kit/js/bootstrap.min.js'
 // import '../../assets/paper-kit/js/bootstrap-switch.min.js'
 // import '../../assets/paper-kit/js/paper-kit.js?v=2.0.1'
 
+// Vue.use(Vuex)
 // Vue.use(BootstrapVue)
 Vue.use(VueResource)
 
@@ -35,6 +39,7 @@ Vue.config.productionTip = false
 new Vue({
     el: '#auth',
     router,
+    store,
     // template: '<App/>',
     components: {
         Top,

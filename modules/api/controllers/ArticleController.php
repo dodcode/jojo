@@ -15,7 +15,7 @@ use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\rest\ActiveController;
 
-class ArticleController extends ActiveController
+class ArticleController extends BaseController
 {
     public $modelClass = 'app\models\Article';
 

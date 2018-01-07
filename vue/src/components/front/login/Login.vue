@@ -13,7 +13,7 @@
             </a>
         </div>
         <form class="register-form" action="/front/login" method="post">
-            <input type="hidden" name="_csrf" v-bind:value="csrf" />
+            <input type="hidden" v-bind:name="csrf_param" v-bind:value="csrf_token" />
             <label>Username</label>
             <input type="text" class="form-control" placeholder="Username" name="LoginForm[username]">
 
@@ -22,7 +22,7 @@
             <button class="btn btn-danger btn-block btn-round" type="submit">Login</button>
         </form>
         <div class="forgot">
-            <router-link :to="'/register'" class="btn btn-link btn-danger">Register</router-link>
+            <a href="javascript:;" v-on:click="register" class="btn btn-link btn-danger">Register</a>
             <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
         </div>
     </div>
@@ -30,14 +30,31 @@
 
 <script>
     export default {
+        http: {
+            headers: {
+                Accept: 'application/json'
+            }
+        },
         name: "login",
         data() {
             return  {
-                csrf: 'none'
+                csrf_token: 'waiting',
+                csrf_param: '_csrf'
             }
         },
         mounted() {
             // get csrf token.
+            this.$http.get('http://dodcode.me/api/security/csrf').then(response => {
+                this.csrf_token = response.body.csrf_token;
+                this.csrf_param = response.body.csrf_param;
+            }, error => {
+
+            });
+        },
+        methods: {
+            register: function () {
+                this.$store.dispatch('send', {type: 'danger', message: 'Not opened yet!'})
+            }
         }
     }
 </script>

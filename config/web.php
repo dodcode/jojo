@@ -10,7 +10,7 @@ $config = [
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
-            'enableCsrfValidation' => true,
+            'enableCsrfValidation' => false,
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'Vq9AauH0_uuBg01-NyCj35Gu29KKYUG_',
             // let the API accept input data in JSON format.
