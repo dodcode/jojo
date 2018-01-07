@@ -1,4 +1,26 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Pike Admin - Free Bootstrap 4 Admin Template</title><meta name=description content="Free Bootstrap 4 Admin Theme | Pike Admin"><meta name=author content="Pike Web Development - https://www.pikephp.com"><link rel="shortcut icon" href=../src/assets/pike-admin/images/favicon.ico><link href=/static/css/admin/index.b8ee699067e09e4dc57665ac4d77d6d2.css rel=stylesheet></head><body class=adminbody><div id=admin><top></top><left></left><right></right><bottom></bottom></div><script>var resizefunc = [];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Admin Panel - jojo</title>
+    <meta name="description" content="Admin Panel | jojo">
+
+    
+    <link rel="shortcut icon" href="../src/assets/pike-admin/images/favicon.ico">
+<link href="/static/css/backend/index.b8ee699067e09e4dc57665ac4d77d6d2.css" rel="stylesheet"></head>
+<body class="adminbody">
+<?php echo 'test';?>
+<div id="admin">
+    <top></top>
+    <left></left>
+    <right></right>
+    <bottom></bottom>
+</div>
+
+<script>
+    var resizefunc = [];
 
     function executeFunctionByName(functionName, context) {
         var args = [].slice.call(arguments).splice(2);
@@ -63,4 +85,9 @@
                 window[resizefunc[i]]();
             }
         }
-    }</script><script type=text/javascript src=/static/js/manifest.bde87ef9c47c660bf30e.js></script><script type=text/javascript src=/static/js/vendor.e1a825269f638b2930fb.js></script><script type=text/javascript src=/static/js/admin/index.52a50159d1df1116be36.js></script></body></html>
+    }
+</script>
+
+
+<script type="text/javascript" src="/static/js/manifest.9f323be408bed4386ae0.js"></script><script type="text/javascript" src="/static/js/vendor.e1a825269f638b2930fb.js"></script><script type="text/javascript" src="/static/js/backend/index.3ed8f4b5b3efaf0c23e9.js"></script></body>
+</html>

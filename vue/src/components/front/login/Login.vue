@@ -12,7 +12,8 @@
                 <i class="fa fa-twitter"></i>
             </a>
         </div>
-        <form class="register-form" action="/site/login" method="post">
+        <form class="register-form" action="/front/login" method="post">
+            <input type="hidden" name="_csrf" v-bind:value="csrf" />
             <label>Username</label>
             <input type="text" class="form-control" placeholder="Username" name="LoginForm[username]">
 
@@ -29,7 +30,15 @@
 
 <script>
     export default {
-        name: "login"
+        name: "login",
+        data() {
+            return  {
+                csrf: 'none'
+            }
+        },
+        mounted() {
+            // get csrf token.
+        }
     }
 </script>
 

@@ -19,6 +19,23 @@ const createLintingRule = () => ({
   }
 })
 
+// define what you want to expose here.
+// see: https://github.com/webpack-contrib/expose-loader
+const exposeRule = [
+    {
+        test: require.resolve('jquery'),
+        use: [{
+            loader: 'expose-loader',
+            options: 'jQuery'
+        },{
+            loader: 'expose-loader',
+            options: '$'
+        }]
+    }
+]
+
+console.log(require.resolve('bootstrap'))
+
 
 // support multi-page application
 const { templates } = require('../config/templates')
@@ -49,6 +66,11 @@ module.exports = {
   },
   module: {
     rules: [
+        ...(exposeRule),
+        // {
+        //     test: require.resolve('jquery'),
+        //     loader: 'expose-loader?jQuery!expose-loader?$'
+        // },
       ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,

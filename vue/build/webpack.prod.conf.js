@@ -136,8 +136,9 @@ templates.forEach((template) => {
             inject: true,
             minify: {
                 removeComments: true,
-                collapseWhitespace: true,
-                removeAttributeQuotes: true
+                // As this is for Yii based application now, we temporarily disable below two features.
+                // collapseWhitespace: true,
+                // removeAttributeQuotes: true
                 // more options:
                 // https://github.com/kangax/html-minifier#options-quick-reference
             },

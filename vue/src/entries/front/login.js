@@ -5,7 +5,7 @@ import router from '../../router/front/login'
 // import BootstrapVue from 'bootstrap-vue'
 import Top from '../../components/front/login/Top'
 import Auth from '../../components/front/login/Auth'
-// import Bottom from '../../components/front/common/Bottom'
+import LoginBottom from '../../components/front/login/LoginBottom'
 import VueResource from 'vue-resource'
 
 import '../../assets/paper-kit/css/bootstrap.min.css'
@@ -14,6 +14,9 @@ import '../../assets/paper-kit/css/demo.css'
 import '../../assets/css/font-montserrat.css'
 import '../../assets/pike-admin/font-awesome/css/font-awesome.min.css'
 import '../../assets/paper-kit/css/nucleo-icons.css'
+// import '../../assets/css/jojo.scss'
+import LoginBg from '../../assets/paper-kit/img/login-image.jpg'
+
 
 // import 'tether/dist/js/tether.min'
 import '../../assets/paper-kit/js/jquery-3.2.1.js'
@@ -36,11 +39,13 @@ new Vue({
     components: {
         Top,
         Auth,
-        // Bottom
+        LoginBottom
     },
     data() {
         return {
-            copyrightYear: new Date().getFullYear()
+            bgOptions: {
+                backgroundImage: 'url('+LoginBg+')'
+            }
         }
     }
 })

@@ -1,20 +1,25 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: rex
+ * Email: caoliang@simpleware.com.cn
+ * Date: 07/01/2018
+ * Time: 11:14 AM
+ */
 
 namespace app\controllers;
 
+
+use app\models\ContactForm;
 use app\models\EntryForm;
+use app\models\LoginForm;
 use Yii;
-use yii\filters\AccessControl;
 use yii\helpers\Markdown;
 use yii\helpers\Url;
 use yii\web\Response;
-use app\models\LoginForm;
-use app\models\ContactForm;
 
-class FrontController extends BaseController
+class SiteController extends BaseController
 {
-    public $layout = false;
-
     /**
      * @inheritdoc
      */
@@ -56,7 +61,9 @@ class FrontController extends BaseController
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
-        return $this->render('login');
+        return $this->render('login', [
+            'model' => $model,
+        ]);
     }
 
     /**

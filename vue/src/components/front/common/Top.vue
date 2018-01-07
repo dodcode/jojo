@@ -1,5 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-md fixed-top navbar-transparent" color-on-scroll="500">
+        <top-alert></top-alert>
         <div class="container">
             <div class="navbar-translate">
                 <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,9 +31,11 @@
 </template>
 
 <script>
-    import $ from 'jquery'
+    import 'bootstrap'
+    import TopAlert from "./TopAlert";
 
     export default {
+        components: {TopAlert},
         name: "top",
         mounted() {
             var searchVisible = 0;
@@ -181,6 +184,7 @@
     }
     .navbar {
         &.navbar-transparent {
+            padding-top: 0;
             background-color: #fff !important;
             .navbar-brand {
                 color: #66615B;
@@ -194,6 +198,10 @@
 
         .navbar-collapse {
             border-left: 1px solid #fff;
+        }
+
+        &.navbar-expand-md {
+            flex-wrap: wrap;
         }
     }
 </style>
