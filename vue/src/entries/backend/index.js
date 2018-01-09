@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import router from '../../router/backend/index'
 import BootstrapVue from 'bootstrap-vue'
-import VueResource from 'vue-resource'
 import Top from '../../components/backend/common/Top'
 import Left from '../../components/backend/common/Left'
 import Right from '../../components/backend/common/Right'
@@ -23,7 +22,6 @@ import '../../assets/pike-admin/js/detect'
 import '../../assets/pike-admin/js/fastclick'
 
 Vue.use(BootstrapVue)
-Vue.use(VueResource)
 
 Vue.config.productionTip = false
 

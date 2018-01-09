@@ -14,6 +14,7 @@
     "yii": "node build/yii.js"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "bootstrap": "^4.0.0-beta.3",
     "bootstrap-vue": "^1.4.0",
     "chart.js": "^2.7.1",
@@ -27,7 +28,6 @@
     "mavon-editor": "^2.4.16",
     "tether": "^1.4.3",
     "vue": "^2.5.13",
-    "vue-resource": "^1.3.5",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "waypoints": "^4.0.1"

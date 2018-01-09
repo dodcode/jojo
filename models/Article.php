@@ -13,6 +13,7 @@ use Yii;
  * @property integer $author_id
  * @property integer $created_at
  * @property integer $updated_at
+ * @property integer $publish
  *
  * @property User $author
  */
@@ -34,7 +35,7 @@ class Article extends \yii\db\ActiveRecord
         return [
             [['title', 'content', 'author_id'], 'required'],
             [['content'], 'string'],
-            [['author_id', 'created_at', 'updated_at'], 'integer'],
+            [['author_id', 'created_at', 'updated_at', 'publish'], 'integer'],
             [['title'], 'string', 'max' => 255],
             [['author_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['author_id' => 'id']],
         ];
@@ -50,6 +51,7 @@ class Article extends \yii\db\ActiveRecord
             'title' => Yii::t('user', 'Title'),
             'content' => Yii::t('user', 'Content'),
             'author_id' => Yii::t('user', 'Author ID'),
+            'publish' => Yii::t('user', 'Publish'),
             'created_at' => Yii::t('user', 'Created At'),
             'updated_at' => Yii::t('user', 'Updated At'),
         ];

@@ -191,7 +191,7 @@
     import logo from '../../../assets/pike-admin/images/logo.png'
 
     export default {
-        name: "header",
+        name: "top",
         data() {
             return {
                 logo: logo

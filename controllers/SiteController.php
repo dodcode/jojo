@@ -10,6 +10,7 @@
 namespace app\controllers;
 
 
+use app\models\Article;
 use app\models\ContactForm;
 use app\models\EntryForm;
 use app\models\LoginForm;
@@ -157,7 +158,18 @@ class SiteController extends BaseController
     }
 
     public function actionTest() {
-        $result = Markdown::process('# abc'.PHP_EOL.'## bcd'.PHP_EOL.'> aaa', 'gfm');
+        $code = <<<EOD
+```php
+class MyCode {
+    private \$test = '123'
+}
+```
+EOD;
+
+//        $result = Markdown::process('# abc'.PHP_EOL.'## bcd'.PHP_EOL.'> aaa'.PHP_EOL.PHP_EOL.$code.PHP_EOL, 'gfm');
+        $article = Article::findOne(2);
+        $result = $article->content;
+
         return $this->render('test', ['result' => $result]);
     }
 }

@@ -34,9 +34,6 @@ const exposeRule = [
     }
 ]
 
-console.log(require.resolve('bootstrap'))
-
-
 // support multi-page application
 const { templates } = require('../config/templates')
 let entries = {}

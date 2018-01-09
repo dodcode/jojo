@@ -6,7 +6,6 @@ import router from '../../router/front/login'
 import Top from '../../components/front/login/Top'
 import Auth from '../../components/front/login/Auth'
 import LoginBottom from '../../components/front/login/LoginBottom'
-import VueResource from 'vue-resource'
 // import Vuex from 'vuex'
 import store from '../../store'
 
@@ -31,7 +30,6 @@ import '../../assets/paper-kit/js/jquery-ui-1.12.1.custom.min.js'
 
 // Vue.use(Vuex)
 // Vue.use(BootstrapVue)
-Vue.use(VueResource)
 
 Vue.config.productionTip = false
 

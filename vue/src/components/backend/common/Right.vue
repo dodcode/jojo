@@ -1,16 +1,23 @@
 <template>
     <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <breadcrumb></breadcrumb>
 
-       <router-view></router-view>
-
+                <router-view></router-view>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 
 
+    import Breadcrumb from "./Breadcrumb";
+
     export default {
-        name: "content",
+        components: {Breadcrumb},
+        name: "right",
         created () {
             console.log('right created')
         },

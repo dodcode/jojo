@@ -9,12 +9,12 @@
                 <ul>
 
                     <li class="submenu">
-                        <a class="active" href="/admin"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
+                        <a class="active" href="/backend"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
                     </li>
                     <li class="submenu">
                         <a href="#"><i class="fa fa-fw fa-file-text-o"></i> <span> Contents </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><router-link :to="'/editor'">Editor</router-link></li>
+                            <li><router-link :to="'/article'">Article</router-link></li>
                             <li><router-link :to="'/media'">Media</router-link></li>
                         </ul>
                     </li>

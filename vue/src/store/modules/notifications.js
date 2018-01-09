@@ -19,6 +19,13 @@ const actions = {
     },
     send ({ commit, state }, notification){
         commit(types.SEND_NOTIFICATION, notification)
+
+        let currentIndex = state.notifications.length - 1
+        setTimeout(function () {
+            if (state.notifications.length >= currentIndex + 1) {
+                commit(types.CLOSE_NOTIFICATION, currentIndex)
+            }
+        }, 1000);
     }
 }
 
@@ -31,7 +38,7 @@ const mutations = {
     },
     [types.CLOSE_NOTIFICATION] (state, index) {
         state.notifications.splice(index, 1)
-    }
+    },
 }
 
 export default {

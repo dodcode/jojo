@@ -26,12 +26,10 @@
             })
         },
         mounted() {
-            console.log(this.notifications)
         },
         methods: {
             remove: function (index) {
                 this.$store.dispatch('remove', index)
-                console.log(this.notifications)
             }
         }
     }

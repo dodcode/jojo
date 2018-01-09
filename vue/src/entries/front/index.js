@@ -5,7 +5,7 @@ import Vue from 'vue'
 import Top from '../../components/front/common/Top'
 import MainContent from '../../components/front/index/MainContent'
 import Bottom from '../../components/front/common/Bottom'
-import VueResource from 'vue-resource'
+import store from '../../store'
 
 import 'jquery'
 // import '../../assets/paper-kit/js/jquery-3.2.1.js'
@@ -17,13 +17,13 @@ import '../../assets/paper-kit/css/paper-kit.css?v=2.1.0'
 import '../../assets/css/font-montserrat.css'
 import '../../assets/pike-admin/font-awesome/css/font-awesome.min.css'
 
-Vue.use(VueResource)
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
     el: '#article',
+    store,
     components: {
         Top,
         MainContent,

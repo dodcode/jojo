@@ -1,6 +1,6 @@
 /* eslint-disable */
 import RightIndex from '../../components/backend/index/RightIndex'
-import RightEditor from '../../components/backend/editor/RightEditor'
+import Article from '../../components/backend/contents/Article'
 import RightMedia from '../../components/backend/media/RightMedia'
 
 export default [
@@ -10,9 +10,9 @@ export default [
         component: RightIndex,
     },
     {
-        path: '/editor',
-        name: 'right-editor',
-        component: RightEditor,
+        path: '/article',
+        name: 'article',
+        component: Article,
     },
     {
         path: '/media',
