@@ -88,12 +88,6 @@ $config = [
     ],
     'params' => $params,
     'modules' => [
-        'backend' => [
-            'class' => 'app\modules\backend\Module',
-        ],
-        'frontend' => [
-            'class' => 'app\modules\frontend\Module',
-        ],
         'api' => [
             'class' => 'app\modules\api\Module'
         ]

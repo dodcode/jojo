@@ -9,14 +9,14 @@
 
                 <div class="card-body">
 
-                    <form action="http://dodcode.me/api/article/create" v-on:submit="save">
+                    <form action="/api/article/create" v-on:submit="save">
                         <div class="form-group col-md-6">
                             <label for="title">Title</label>
                             <input type="text" name="title" class="form-control" id="title" aria-describedby="title-help" placeholder="Enter title" required>
                             <small id="title-help" class="form-text text-muted">The title for this article.</small>
                         </div>
 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12" id="editor">
                             <label for="content">Content</label>
                             <mavon-editor v-bind="setting"></mavon-editor>
                             <small id="content-help" class="form-text text-muted">The content for this article.</small>
@@ -60,34 +60,26 @@
             save: function (event) {
                 event.preventDefault()
                 let url = $(event.target).attr('action')
-                // var dataArray = $(event.target).serializeArray()
-                // dataArray.push({
-                //     name: 'content',
-                //     value: $('.v-show-content').html()
-                // })
-
-                // var data = {}
-                // for (var i in dataArray) {
-                //     data[dataArray[i].name] = dataArray[i].value
-                // }
 
                 var data = $(event.target).serialize()
-                data += '&content=' + $('.v-show-content').html()+'&author_id=1'
-                console.log(data)
+                // data += '&content=' + $('.v-show-content').html()+'&author_id=1'
+                data += '&content=' + $('.v-show-content').html()
+
+                var _this = this
 
                 axios.post(url, data, {
                     headers: {
                         'Accept': 'application/json',
-                        'Content-Type': 'application/x-www-form-urlencoded'
+                        // 'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 }).then(function (response) {
-                    this.$store.dispatch('send', {
+                    _this.$store.dispatch('send', {
                         type: 'success',
                         title: 'Saved!',
                         message: 'You\'ve successfully saved this article!'
                     })
                 }).catch(function(error) {
-                    this.$store.dispatch('send', {
+                    _this.$store.dispatch('send', {
                         type: 'warning',
                         title: 'Warning!',
                         message: 'Something error has occurred!'
@@ -99,6 +91,10 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+    #editor {
+        .v-note-wrapper {
+            z-index: inherit;
+        }
+    }
 </style>

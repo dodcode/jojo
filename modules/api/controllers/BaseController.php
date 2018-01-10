@@ -22,7 +22,9 @@ class BaseController extends ActiveController
         parent::init();
 
         // For testing vue-client. You should remove this method in production mode.
-        $headers = get_response()->headers;
-        $headers->set('Access-Control-Allow-Origin', '*');
+//        if (YII_ENV_DEV) {
+//            $headers = get_response()->headers;
+//            $headers->set('Access-Control-Allow-Origin', '*');
+//        }
     }
 }

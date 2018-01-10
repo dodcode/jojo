@@ -29,6 +29,7 @@
 </template>
 
 <script>
+    import axios from 'axios'
     export default {
         http: {
             headers: {
@@ -44,12 +45,18 @@
         },
         mounted() {
             // get csrf token.
-            this.$http.get('http://dodcode.me/api/security/csrf').then(response => {
-                this.csrf_token = response.body.csrf_token;
-                this.csrf_param = response.body.csrf_param;
-            }, error => {
-
-            });
+            var _this = this
+            axios.post('/api/security/csrf').then(function (response) {
+                _this.csrf_token = response.data.csrf_token;
+                _this.csrf_param = response.data.csrf_param;
+            }).catch(function(error) {
+                _this.$store.dispatch('send', {
+                    type: 'warning',
+                    title: 'Warning!',
+                    message: 'Something error has occurred!'
+                })
+                console.log(error)
+            })
         },
         methods: {
             register: function () {

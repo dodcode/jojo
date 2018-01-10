@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%article}}".
@@ -55,6 +56,15 @@ class Article extends \yii\db\ActiveRecord
             'created_at' => Yii::t('user', 'Created At'),
             'updated_at' => Yii::t('user', 'Updated At'),
         ];
+    }
+
+    public function behaviors()
+    {
+        $behaviors =  parent::behaviors();
+        $behaviors[] = [
+            'class' => TimestampBehavior::className(),
+        ];
+        return $behaviors;
     }
 
     /**

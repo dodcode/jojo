@@ -11,12 +11,14 @@
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport">
     <meta name="viewport" content="width=device-width">
 
-<link href="/static/css/front/article.42aa1300ac9b7349f5018deeb27fa341.css" rel="stylesheet"></head>
+<link href="/static/css/front/index.dd8f88f9d26f2f7b8d0c68cc9f3b3cd5.css" rel="stylesheet"></head>
 <body>
 <div id="article">
     <top></top>
-    <main-content></main-content>
+        <div class="main">
+            <main-content></main-content>
+        </div>
     <bottom></bottom>
 </div>
-<script type="text/javascript" src="/static/js/manifest.1a72893aad87699c08af.js"></script><script type="text/javascript" src="/static/js/vendor.4a4027f8dc3e4367e1cd.js"></script><script type="text/javascript" src="/static/js/front/article.58ee37e9500297df3e29.js"></script></body>
+<script type="text/javascript" src="/static/js/manifest.1a72893aad87699c08af.js"></script><script type="text/javascript" src="/static/js/vendor.4a4027f8dc3e4367e1cd.js"></script><script type="text/javascript" src="/static/js/front/index.eca732a2c331154a3826.js"></script></body>
 </html>
