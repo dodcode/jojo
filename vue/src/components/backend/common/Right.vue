@@ -2,8 +2,8 @@
     <div class="content-page">
         <div class="content">
             <div class="container-fluid">
+                <modal></modal>
                 <breadcrumb></breadcrumb>
-
                 <router-view></router-view>
             </div>
         </div>
@@ -12,11 +12,13 @@
 
 <script>
 
-
     import Breadcrumb from "./Breadcrumb";
+    import Modal from "./Modal";
 
     export default {
-        components: {Breadcrumb},
+        components: {
+            Modal,
+            Breadcrumb},
         name: "right",
         created () {
             console.log('right created')

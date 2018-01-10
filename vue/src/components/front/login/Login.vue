@@ -53,7 +53,7 @@
         },
         methods: {
             register: function () {
-                this.$store.dispatch('send', {type: 'danger', message: 'Not opened yet!'})
+                this.$store.dispatch('send', {type: 'danger', title: 'test', message: 'Not opened yet!'})
             }
         }
     }

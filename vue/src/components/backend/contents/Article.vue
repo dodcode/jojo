@@ -81,8 +81,17 @@
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 }).then(function (response) {
-                    console.log(response)
+                    this.$store.dispatch('send', {
+                        type: 'success',
+                        title: 'Saved!',
+                        message: 'You\'ve successfully saved this article!'
+                    })
                 }).catch(function(error) {
+                    this.$store.dispatch('send', {
+                        type: 'warning',
+                        title: 'Warning!',
+                        message: 'Something error has occurred!'
+                    })
                     console.log(error)
                 })
             }

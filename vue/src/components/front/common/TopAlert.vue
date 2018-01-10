@@ -25,8 +25,6 @@
                 notifications: 'getNotifications'
             })
         },
-        mounted() {
-        },
         methods: {
             remove: function (index) {
                 this.$store.dispatch('remove', index)

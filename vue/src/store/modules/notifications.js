@@ -3,13 +3,17 @@ import * as types from "../mutation-types";
 const state = {
     notifications: [{
         type: 'warning',
+        title: 'Prepare vuex',
         message: 'vuex is ok!'
     }]
 }
 
 const getters = {
     getNotifications: (state) => {
-        return state.notifications;
+        return state.notifications
+    },
+    lastNotification: (state) => {
+        return state.notifications[state.notifications.length - 1]
     }
 }
 
@@ -19,20 +23,14 @@ const actions = {
     },
     send ({ commit, state }, notification){
         commit(types.SEND_NOTIFICATION, notification)
-
-        let currentIndex = state.notifications.length - 1
-        setTimeout(function () {
-            if (state.notifications.length >= currentIndex + 1) {
-                commit(types.CLOSE_NOTIFICATION, currentIndex)
-            }
-        }, 1000);
     }
 }
 
 const mutations = {
-    [types.SEND_NOTIFICATION] (state, {type, message}) {
+    [types.SEND_NOTIFICATION] (state, {type, title, message}) {
         state.notifications.push({
             type: type,
+            title: title,
             message: message
         })
     },
