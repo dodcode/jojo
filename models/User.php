@@ -121,4 +121,11 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
     public function getProfile() {
         return $this->hasOne(UserProfile::className(), ['user_id' => 'id']);
     }
+
+    public function fields()
+    {
+        $fields = parent::fields();
+        unset($fields['password'], $fields['auth_key'], $fields['access_token']);
+        return $fields;
+    }
 }

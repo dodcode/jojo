@@ -17,7 +17,7 @@
                         </div>
 
                         <div class="form-group col-md-12" id="editor">
-                            <label for="content">Content</label>
+                            <label>Content</label>
                             <mavon-editor v-bind="setting"></mavon-editor>
                             <small id="content-help" class="form-text text-muted">The content for this article.</small>
                         </div>
@@ -41,6 +41,7 @@
     import MavonEditor from 'mavon-editor'
     import 'mavon-editor/dist/css/index.css'
     import axios from 'axios'
+    import EnvConfig from '../../../config'
 
     export default {
         name: "right-article",
@@ -59,7 +60,7 @@
         methods: {
             save: function (event) {
                 event.preventDefault()
-                let url = $(event.target).attr('action')
+                let url = EnvConfig.host + $(event.target).attr('action')
 
                 var data = $(event.target).serialize()
                 // data += '&content=' + $('.v-show-content').html()+'&author_id=1'

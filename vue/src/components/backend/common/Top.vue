@@ -198,7 +198,6 @@
             }
         },
         mounted() {
-            console.log('top mounted');
 
             var $admin = $('#admin');
 
@@ -211,7 +210,6 @@
                         this.$menuItem = $("#sidebar-menu a")
                 };
                 Sidemenu.prototype.openLeftBar = function() {
-                    console.log('Slidemenu.openLeftBar');
                     $admin.toggleClass("enlarged");
                     $admin.addClass("forced");
 
@@ -230,7 +228,6 @@
                 },
                     //menu item click
                     Sidemenu.prototype.menuItemClick = function(e) {
-                    console.log('Slidemenu.menuItemClick');
                         if(!$admin.hasClass("enlarged")){
                             if($(this).parent().hasClass("submenu")) {
 

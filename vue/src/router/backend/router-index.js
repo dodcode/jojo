@@ -1,5 +1,6 @@
 /* eslint-disable */
 import RightIndex from '../../components/backend/index/RightIndex'
+import ArticleList from '../../components/backend/contents/ArticleList'
 import Article from '../../components/backend/contents/Article'
 import RightMedia from '../../components/backend/media/RightMedia'
 
@@ -12,7 +13,12 @@ export default [
     {
         path: '/article',
         name: 'article',
-        component: Article,
+        component: ArticleList,
+    },
+    {
+        path: '/editor',
+        name: 'editor',
+        component: Article
     },
     {
         path: '/media',

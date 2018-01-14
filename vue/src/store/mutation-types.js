@@ -1,2 +1,4 @@
-export const SEND_NOTIFICATION = 'SEND_NOTIFICATION'
-export const CLOSE_NOTIFICATION = 'CLOSE_NOTIFICATION'
+export const SEND_NOTIFICATION = 'send_notification'
+export const CLOSE_NOTIFICATION = 'close_notification'
+
+export const LOAD_ARTICLES = 'load_articles'

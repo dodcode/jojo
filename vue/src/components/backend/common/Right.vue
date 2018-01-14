@@ -19,13 +19,7 @@
         components: {
             Modal,
             Breadcrumb},
-        name: "right",
-        created () {
-            console.log('right created')
-        },
-        mounted () {
-            console.log('right mounted')
-        }
+        name: "right"
     }
 </script>
 

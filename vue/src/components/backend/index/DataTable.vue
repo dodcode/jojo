@@ -1,6 +1,5 @@
 <template>
     <div class="card-body">
-
         <table id="example1" class="table table-bordered table-responsive-xl table-hover display">
             <thead>
             <tr>
@@ -165,11 +164,10 @@
 
 <script>
 
-    import $ from 'jquery'
     import 'datatables.net-bs4'
 
     export default {
-        name: "datatable",
+        name: "data-table",
         mounted () {
             // data-tables
             $('#example1').DataTable();

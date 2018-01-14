@@ -31,7 +31,7 @@ class ArticleController extends BaseController
                     'verbs' => ['get', 'post', 'put', 'delete']
                 ],
                 [
-                    'allow' => false,
+                    'allow' => true,
                     'actions' => [],
                     'roles' => ['?']
                 ]
@@ -48,6 +48,7 @@ class ArticleController extends BaseController
     {
         $actions = parent::actions();
         $actions['create']['class'] = 'app\modules\api\actions\article\CreateAction';
+        $actions['index']['class'] = 'app\modules\api\actions\article\IndexAction';
         return $actions;
     }
 }

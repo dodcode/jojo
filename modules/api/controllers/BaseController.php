@@ -21,10 +21,15 @@ class BaseController extends ActiveController
     {
         parent::init();
 
+        // Allow browser to catch these response headers.
+        $headers = get_response()->headers;
+        $headers->set('Access-Control-Expose-Headers',
+            'X-Pagination-Current-Page,X-Pagination-Page-Count,X-Pagination-Per-Page,X-Pagination-Total-Count');
+
         // For testing vue-client. You should remove this method in production mode.
-//        if (YII_ENV_DEV) {
-//            $headers = get_response()->headers;
-//            $headers->set('Access-Control-Allow-Origin', '*');
-//        }
+        if (YII_ENV_DEV) {
+
+            $headers->set('Access-Control-Allow-Origin', '*');
+        }
     }
 }

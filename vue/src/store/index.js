@@ -6,6 +6,7 @@ import actions from './actions'
 // import getters from './getters'
 
 import notifications from './modules/notifications'
+import articles from './modules/articles'
 
 Vue.use(Vuex)
 
@@ -16,7 +17,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     actions,
     modules: {
-        notifications
+        notifications,
+        articles
     },
     // state,
     // getters,

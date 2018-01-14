@@ -12,9 +12,6 @@
 <script>
     export default {
         name: "bottom",
-		mounted () {
-            console.log('Bottom created');
-		}
     }
 </script>
 
