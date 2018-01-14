@@ -1,11 +1,7 @@
 import * as types from "../mutation-types";
 
 const state = {
-    notifications: [{
-        type: 'warning',
-        title: 'Prepare vuex',
-        message: 'vuex is ok!'
-    }]
+    notifications: []
 }
 
 const getters = {

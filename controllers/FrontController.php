@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Article;
 use app\models\EntryForm;
 use Yii;
 use yii\filters\AccessControl;
@@ -38,7 +39,10 @@ class FrontController extends BaseController
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $article = Article::find()->offset(0)->limit(1)->orderBy(['updated_at' => SORT_DESC])->one();
+        return $this->render('index', [
+            'article' => $article
+        ]);
     }
 
     /**
@@ -69,49 +73,6 @@ class FrontController extends BaseController
         Yii::$app->user->logout();
 
         return $this->redirect(Url::to('/'));
-    }
-
-    /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
-    public function actionSay($message = 'Hello')
-    {
-        return $this->render('say', ['message' => $message]);
-    }
-
-    public function actionEntry()
-    {
-        $model = new EntryForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            return $this->render('entry-confirm', ['model' => $model]);
-        } else {
-            return $this->render('entry', ['model' => $model]);
-        }
     }
 
     /**
@@ -147,10 +108,5 @@ class FrontController extends BaseController
                 'model' => $model,
             ]);
         }
-    }
-
-    public function actionTest() {
-        $result = Markdown::process('# abc'.PHP_EOL.'## bcd'.PHP_EOL.'> aaa', 'gfm');
-        return $this->render('test', ['result' => $result]);
     }
 }
