@@ -1,0 +1,37 @@
+<template>
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <modal></modal>
+                <breadcrumb></breadcrumb>
+                <router-view></router-view>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+
+    import Breadcrumb from "./Breadcrumb";
+    import Modal from "./Modal";
+
+    export default {
+        components: {
+            Modal,
+            Breadcrumb},
+        name: "right"
+    }
+</script>
+
+<style scoped>
+    .content-page {
+        margin-left: 250px;
+        overflow: hidden; }
+
+    .content-page .content {
+        padding: 0 5px;
+        margin-top: 50px; }
+
+    #admin.enlarged .content-page {
+        margin-left: 70px; }
+</style>

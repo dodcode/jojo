@@ -1,0 +1,284 @@
+//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "variables";
+@import "common";
+
+/* Main
+---------------------------------------------- */
+
+
+.footer {
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  margin-top: $gap-normal;
+
+  .container {
+    border-top: 1px solid $color-link-light;
+  }
+
+  .text-footer {
+    margin: $gap-normal 0;
+  }
+}
+
+.label {
+  font-size: 100%;
+  font-weight: 100;
+}
+
+
+[v-cloak] {
+  display: none;
+}
+
+/* NAVIGATION
+-------------------------------------------------- */
+
+.navbar {
+  margin: 0;
+}
+
+.color-line {
+  height: 3px;
+  background: -webkit-linear-gradient(left, #3023AE, #BDE3F5, #B4EC51); /* Safari 5.1-6.0 */
+  background: -o-linear-gradient(right,  #3023AE, #BDE3F5, #B4EC51); /* Opera 11.1-12.0 */
+  background: -moz-linear-gradient(right,  #3023AE, #BDE3F5, #B4EC51); /* Firefox 3.6 -15 */
+  background: linear-gradient(to right,  #3023AE, #BDE3F5, #B4EC51); /* Standard syntax */
+}
+
+.navbar-july {
+  border-bottom-color: $color-link-light;
+}
+
+/* CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: -moz-calc(100vw * 0.4);
+  height: -webkit-calc(100vw * 0.4);
+  height: calc(100vw * 0.4);
+  margin-bottom: 60px;
+
+  .carousel-indicators {
+    //bottom: 0%;
+    margin-bottom: 0;
+  }
+
+  .carousel-inner {
+    height: 100%;
+  }
+
+  .item {
+    height: 100%;
+    background-color: #FFFFFF;
+
+    .carousel-caption {
+
+      h2 {
+        font-size: 6vmin;
+        padding: 0;
+        margin: 0;
+      }
+
+      padding-top: -moz-calc(5% / 2);
+      padding-top: -webkit-calc(5% / 2);
+      padding-top: calc(5% / 2);
+      padding-bottom: -moz-calc(5% / 2);
+      padding-bottom: -webkit-calc(5% / 2);
+      padding-bottom: calc(5% / 2);
+      //bottom:1%;
+    }
+
+    img {
+      min-width: 100%;
+      //position: absolute;
+      //top: 0;
+      //left: 0;
+      //min-width: 100%;
+      //max-height: 100%;
+    }
+  }
+}
+
+/* Carousel base class */
+
+.carousel-indicators {
+  li {
+    border-color: $color-link;
+  }
+  .active {
+    background-color: $color-link;
+  }
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: $mini-z-index + 5;
+  color: #fff;
+
+  p {
+    text-shadow: none;
+  }
+}
+
+.carousel-control {
+  .fa {
+    right: 50%;
+    top: -moz-calc(50% - 0.5em);
+    top: -webkit-calc(50% - 0.5em);
+    top: calc(50% - 0.5em);
+    display: inline-block;
+    position: absolute;
+    z-index: $mini-z-index;
+    color: #fff;
+  }
+
+  &.left {
+    background-image: none;
+  }
+
+  &.right {
+    background-image: none;
+  }
+}
+
+/* RECOMMENDED
+-------------------------------------------------- */
+
+.col-lg-3 {
+  text-align: center;
+
+  a {
+    display: inline-block;
+
+    //img:hover {
+    //  border: 1px solid $color-link-light;
+    //}
+  }
+}
+
+.articles-recommended {
+  .row {
+    > div {
+      height: 40vh;
+      overflow-y: hidden;
+    }
+
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+/* DETAIL
+-------------------------------------------------- */
+.detail {
+  .col-lg-6 {
+    text-align: center;
+
+    > .container-fluid {
+      height: 240px;
+
+      .op {
+        height: 100%;
+        position: relative;
+        font-size: 20pt;
+
+        > a {
+          position: absolute;
+          top: -moz-calc(50% - 0.5em);
+          top: -webkit-calc(50% - 0.5em);
+          top: calc(50% - 0.5em);
+          left: -moz-calc(50% - 0.5em);
+          left: -webkit-calc(50% - 0.5em);
+          left: calc(50% - 0.5em);
+        }
+
+        > a:hover {
+          text-decoration: none;
+        }
+
+        > a:focus {
+          text-decoration: none;
+        }
+      }
+
+      > .swiper-container {
+        position: relative;
+        overflow: hidden;
+        height: 240px;
+
+        &.animate {
+          > .pane {
+            transition: all .3s;
+            -webkit-transition: all .3s;
+            -moz-transition: all .3s;
+          }
+        }
+
+        > .pane {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+
+        img {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .gallery {
+      padding-left: 0;
+      margin-top: $gap-normal;
+      position: relative;
+      overflow: hidden;
+
+      > li {
+        display: inline-block;
+        a {
+          font-size: 48px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .attribute {
+      .btn {
+        font-weight: 100;
+      }
+    }
+
+    .color-group {
+      > .active {
+        -moz-box-shadow: 0px 3px 0px rgba(0,0,0,0.125) inset;
+        -webkit-box-shadow: 0px 3px 0px rgba(0,0,0,0.125) inset;
+        -o-box-shadow: 0px 3px 0px rgba(0,0,0,0.125) inset;
+        box-shadow: 0px 3px 0px rgba(0,0,0,0.125) inset; // rgba(0,0,0,0.125)
+      }
+    }
+  }
+}
+
+
+
+
+/* CART
+-------------------------------------------------- */
+
+.cart {
+  table {
+    td {
+      vertical-align: middle;
+    }
+  }
+
+  #cart-form {
+    .image {
+    }
+  }
+}
