@@ -1,2 +1,3 @@
-# jojo
-jojo, fill Vue in Yii!
+# vbag
+
+Help to easily integrate vuejs into Yii.
