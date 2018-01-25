@@ -6,7 +6,7 @@ protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
 themes/classic/views/
-
+controllers/SiteController.php
 
 # phpstorm project files
 .idea
