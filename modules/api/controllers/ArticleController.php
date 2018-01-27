@@ -51,11 +51,4 @@ class ArticleController extends BaseController
         $actions['index']['class'] = 'app\modules\api\actions\article\IndexAction';
         return $actions;
     }
-
-    protected function verbs()
-    {
-        $verbs =  parent::verbs();
-        $verbs['delete'] = ['DELETE', 'OPTIONS'];
-        return $verbs;
-    }
 }
