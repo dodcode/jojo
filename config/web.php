@@ -50,18 +50,20 @@ $config = [
             'enablePrettyUrl' => true,
 //            'enableStrictParsing' => true,
             'showScriptName' => false,
-//            'rules' => [
+            'rules' => [
+                // made requests with OPTIONS verb redirect to options action.
+                'OPTIONS <controller:(\w+\/)?\w+>/<action:\w+>' => '<controller>/options'
 //                [
 //                    'class' => 'yii\rest\UrlRule',
 //                    'controller' => 'api/article',
-//                    'pluralize' => false
+//                    'pluralize' => false,
 //                ],
 //                [
 //                    'class' => 'yii\rest\UrlRule',
 //                    'controller' => 'rest',
 //                    'pluralize' => false
 //                ]
-//            ],
+            ],
         ],
         'view' => [
             'theme' => [
@@ -100,14 +102,14 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        'allowedIPs' => ['127.0.0.1', '::1', '192.168.10.1'],
+        'allowedIPs' => ['127.0.0.1', '::1', '172.20.0.1'],
     ];
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        'allowedIPs' => ['127.0.0.1', '::1', '192.168.10.1'],
+        'allowedIPs' => ['127.0.0.1', '::1', '172.20.0.1'],
     ];
 }
 

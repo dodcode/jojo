@@ -34,7 +34,7 @@ class CreateAction extends \yii\rest\CreateAction
         ]);
 
         $data = Yii::$app->getRequest()->getBodyParams();
-        $data['author_id'] = Yii::$app->getUser()->id;
+        $data['author_id'] = YII_ENV_DEV ? 1 : Yii::$app->getUser()->id;
         $model->load($data, '');
         if ($model->save()) {
             $response = Yii::$app->getResponse();

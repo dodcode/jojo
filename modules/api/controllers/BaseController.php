@@ -26,10 +26,10 @@ class BaseController extends ActiveController
         $headers->set('Access-Control-Expose-Headers',
             'X-Pagination-Current-Page,X-Pagination-Page-Count,X-Pagination-Per-Page,X-Pagination-Total-Count');
 
-        // For testing vue-client. You should remove this method in production mode.
+        // For testing vue-client. You should remove these settings in production mode.
         if (YII_ENV_DEV) {
-
             $headers->set('Access-Control-Allow-Origin', '*');
+            $headers->set('Access-Control-Allow-Methods', '*');
         }
     }
 }

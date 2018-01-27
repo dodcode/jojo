@@ -46,6 +46,9 @@ class IndexAction extends \yii\rest\IndexAction
         $query->joinWith('author')
             ->where(['publish' => 1]);
 
+//        $id = get_request()->get('id');
+//        $id && $query->andWhere(['article.id' => $id])->offset(0)->limit(1);
+
         return Yii::createObject([
             'class' => ActiveDataProvider::className(),
             'query' => $query,

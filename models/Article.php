@@ -20,6 +20,10 @@ use yii\behaviors\TimestampBehavior;
  */
 class Article extends \yii\db\ActiveRecord
 {
+
+    const PUBLISH_YES = 1; // 发布
+    const PUBLISH_NO = 0; // 不发布
+
     /**
      * @inheritdoc
      */
@@ -73,5 +77,15 @@ class Article extends \yii\db\ActiveRecord
     public function getAuthor()
     {
         return $this->hasOne(User::className(), ['id' => 'author_id']);
+    }
+
+    public function afterFind()
+    {
+        $this->created_at = date('Y-m-d H:i:s', $this->created_at);
+        $this->updated_at = date('Y-m-d H:i:s', $this->updated_at);
+        $this->publish = $this->publish == self::PUBLISH_YES ? '发布': '待发布';
+//            translate('article', 'published') :
+//            translate('article', 'waiting for publish');
+        parent::afterFind();
     }
 }

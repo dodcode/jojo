@@ -28,7 +28,7 @@ class ArticleController extends BaseController
                     'actions' => [], // specifies which actions this rule matches.
                     'roles' => ['@'],
                     // specifies which request method this rule matches.
-                    'verbs' => ['get', 'post', 'put', 'delete']
+                    'verbs' => ['get', 'post', 'put', 'delete', 'options']
                 ],
                 [
                     'allow' => true,
@@ -50,5 +50,12 @@ class ArticleController extends BaseController
         $actions['create']['class'] = 'app\modules\api\actions\article\CreateAction';
         $actions['index']['class'] = 'app\modules\api\actions\article\IndexAction';
         return $actions;
+    }
+
+    protected function verbs()
+    {
+        $verbs =  parent::verbs();
+        $verbs['delete'] = ['DELETE', 'OPTIONS'];
+        return $verbs;
     }
 }
