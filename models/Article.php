@@ -40,7 +40,8 @@ class Article extends \yii\db\ActiveRecord
         return [
             [['title', 'content', 'author_id'], 'required'],
             [['content'], 'string'],
-            [['author_id', 'created_at', 'updated_at', 'publish'], 'integer'],
+            [['created_at', 'updated_at'], 'safe'],
+            [['author_id', 'publish'], 'integer'],
             [['title'], 'string', 'max' => 255],
             [['author_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['author_id' => 'id']],
         ];
@@ -64,11 +65,9 @@ class Article extends \yii\db\ActiveRecord
 
     public function behaviors()
     {
-        $behaviors =  parent::behaviors();
-        $behaviors[] = [
+        return [
             'class' => TimestampBehavior::className(),
         ];
-        return $behaviors;
     }
 
     /**
@@ -77,15 +76,5 @@ class Article extends \yii\db\ActiveRecord
     public function getAuthor()
     {
         return $this->hasOne(User::className(), ['id' => 'author_id']);
-    }
-
-    public function afterFind()
-    {
-        $this->created_at = date('Y-m-d H:i:s', $this->created_at);
-        $this->updated_at = date('Y-m-d H:i:s', $this->updated_at);
-        $this->publish = $this->publish == self::PUBLISH_YES ? '发布': '待发布';
-//            translate('article', 'published') :
-//            translate('article', 'waiting for publish');
-        parent::afterFind();
     }
 }

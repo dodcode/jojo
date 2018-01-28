@@ -30,6 +30,7 @@ class BaseController extends ActiveController
         if (YII_ENV_DEV) {
             $headers->set('Access-Control-Allow-Origin', '*');
             $headers->set('Access-Control-Allow-Methods', '*');
+            $headers->set('Access-Control-Allow-Headers', '*');
         }
     }
 }
