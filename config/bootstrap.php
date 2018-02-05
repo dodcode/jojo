@@ -2,7 +2,7 @@
 /**
  * Created by PhpStorm.
  * User: rex
- * Email: caoliang@simpleware.com.cn
+
  * Date: 01/12/2017
  * Time: 6:37 PM
  */
